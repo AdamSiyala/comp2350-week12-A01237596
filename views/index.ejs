@@ -21,7 +21,6 @@
 								<th> Last Name </th>
 								<th> Email </th>
 								<th> &nbsp; </th>
-								<th> &nbsp; </th>
 							</tr>
 							</thead>
 							<% let i=0; %>
@@ -30,12 +29,7 @@
 								<td><%= allUsers[i].first_name %></td>
 								<td><%= allUsers[i].last_name %></td>
 								<td><%= allUsers[i].email %></td>
-								<td><a href="/deleteUser?id=<%= allUsers[i].web_user_id %>">
-									<span class="icon is-small">
-										<i class="fas fa-user-times"></i>
-									</span></a>
-								</td>
-								<td><a href="/showPets?id=<%= allUsers[i].web_user_id %>">
+								<td><a href="/showPets?id=<%= allUsers[i]._id %>">
 									<span class="icon is-small">
 										<i class="fas fa-paw"></i>
 									</span></a>
@@ -43,7 +37,7 @@
 							</tr>
 							<% } %>
 							<tfoot>
-								<tr> <td colspan="5">
+								<tr> <td colspan="4">
 								There are <%= i %> users.
 								</td> </tr>
 							</tfoot>
